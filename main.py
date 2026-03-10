@@ -5,7 +5,7 @@ from src.utils.clear_console import clear_console
 
 def main():
     clear_console()
-    print("Welcome to the book store!")
+    print("Welcome to the book store!\n")
     print("Select an option:")
     print("1. Setup the database")
     print("2. Run the application")
