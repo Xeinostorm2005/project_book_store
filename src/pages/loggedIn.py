@@ -36,7 +36,7 @@ def main():
                     print("You have chosen to logout.")
                     session.loggedIn = False
                     session.user = None
-                    input("Press Enter to continue...")
+                    session.cart = []
                     break
                 case _:
                     print(
