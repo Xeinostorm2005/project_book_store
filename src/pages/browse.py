@@ -36,7 +36,7 @@ def main():
             "10. Sport\n"
             "11. Return to main menu"
         )
-        print(color(options, "44;44;44"), end="\n\n")
+        print(color(options, "66;66;66"), end="\n\n")
 
         while True:
             try:

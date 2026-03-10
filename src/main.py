@@ -21,7 +21,7 @@ def application():
             f"{register_opt}"
             "3. Exit"
         )
-        print(color(options, "44;44;44"), end="\n\n")
+        print(color(options, "66;66;66"), end="\n\n")
 
         while True:
             choice = input(color("~> ", "255;140;0"))

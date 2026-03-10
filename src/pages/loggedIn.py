@@ -18,7 +18,7 @@ def main():
             "2. View cart\n"
             "3. Logout"
         )
-        print(color(options, "44;44;44"), end="\n\n")
+        print(color(options, "66;66;66"), end="\n\n")
 
         while True:
             choice = input(color("~> ", "255;140;0"))

@@ -6,8 +6,8 @@ class Cart:
         self.db = DatabaseConnection
 
     def add_to_cart(self, user_id, isbn, quantity=1):
-        query = "INSERT INTO cart (userid, isbn, qty) VALUES (%s, %s, %s)"
-        self.db.execute_query(query, (user_id, isbn, quantity))
+        query = "INSERT INTO cart (userid, isbn, qty) VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE qty = qty + %s"
+        self.db.execute_query(query, (user_id, isbn, quantity, quantity))
 
     def view_cart(self, user_id):
         query = """

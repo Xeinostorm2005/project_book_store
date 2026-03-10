@@ -41,12 +41,21 @@ def main(subject):
             elif choice.upper() == "EXIT":
                 return
             elif choice in [book['isbn'] for book in books]:
+                print("Please ENTER the quantity you want to add to cart:")
+                while True:
+                    quantity_input = input(color("~> ", "255;140;0")).strip()
+                    if quantity_input.isdigit() and int(quantity_input) > 0:
+                        quantity = int(quantity_input)
+                        break
+                    else:
+                        print("Invalid quantity! Please enter a positive integer.")
+
                 print(f"Book with ISBN {choice} added to cart!")
                 session.cart.append({
                     "isbn": choice,
                     "title": next(book['title'] for book in books if book['isbn'] == choice),
                     "price": next(book['price'] for book in books if book['isbn'] == choice),
-                    "quantity": 1
+                    "quantity": quantity
                 })
             else:
                 print(

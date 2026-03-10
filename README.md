@@ -3,19 +3,19 @@
 
 ## About
 A Python Project requested by the university as a project assignment. 
-The project is subjected to Databases and Data modelling. The assigment is to create an application that will be linked to MYSQL. The application must have these requirments:
+The project is subjected to Databases and Data modelling. The assignment is to create an application that will be linked to MYSQL. The application must have these requirements:
 - Login/Register system
 - Books Browsing
 - Add To Cart
 - View Cart
-- View Recipet
-- Export Recipt
+- Checkout
+- Print Receipt
 
 ## Repository Details
 - Author: Xeinostorm
-- Created: 2026-03-08
-- Published: UNKNOWN
-- Last Updated: 2026-03-08
+- Created: 2026-03-01
+- Published: 2026-03-10
+- Last Updated: 2026-03-10
 
 ## Requirements
 Before running the application you need to install the required dependencies:
@@ -25,11 +25,11 @@ pip install python-dotenv bcrypt mysql-connector-python
 
 You need also to create a file called `.env`, that's the file where you will be storing the database information. The content of the file must be like this:
 ```bash
-DATABASE_HOST="ENTER_HOST_IP"
-DATABASE_PORT="3306"
+DATABASE_HOST="ENTER_DATABASE_IP"
+DATABASE_PORT="ENTER_DATABASE_PORT"
 DATABASE_USER="ENTER_DATABASE_USER"
 DATABASE_PASSWORD="ENTER_DATABASE_PASSWORD"
-DATABASE_NAME="ENTER_DATABASE_NAME"
+DATABASE_NAME="book_store"
 ```
 
 ## Run The Application
