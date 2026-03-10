@@ -41,7 +41,7 @@ def main():
         "1. Proceed to checkout\n"
         "2. Return to main menu"
     )
-    print(color(options, "44;44;44"), end="\n\n")
+    print(color(options, "66;66;66"), end="\n\n")
 
     while True:
         choice = input(color("~> ", "255;140;0"))
