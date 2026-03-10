@@ -1,18 +1,20 @@
 from src.utils.logo import logo
 from src.utils.color import color
 from src.pages.books import main as books_main
+from src.models.session import session
+from src.models.cart import cart
 
 subjects = {
     1: "Action & Adventure",
     2: "Arts, Film & Photography",
-    3: "Biographies, Diaries & True Account",
+    3: "Biographies, Diaries & True Accounts",
     4: "Comics & Mangas",
     5: "Computing, Internet & Digital Media",
     6: "Crime, Thriller & Mystery",
     7: "Humour",
-    8: "Language, Lingustics & Writing",
+    8: "Language, Linguistics & Writing",
     9: "Romance",
-    10: "Sport"
+    10: "Sports"
 }
 
 
@@ -44,6 +46,9 @@ def main():
                     raise ValueError
 
                 if int(choice) == 11:
+                    items = session.cart
+                    for item in items:
+                        cart.add_to_cart(session.user["userid"], item["isbn"], item["quantity"])
                     return
 
                 subject = subjects[int(choice)]

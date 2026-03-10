@@ -2,6 +2,7 @@ from src.utils.color import color
 from src.utils.logo import logo
 from src.models.session import session
 from src.pages.browse import main as browse_main
+from src.pages.kassa import main as kassa_main
 
 
 def main():
@@ -29,7 +30,7 @@ def main():
                     break
                 case 2:
                     print("You have chosen to view your cart.")
-                    input("Press Enter to continue...")
+                    kassa_main()
                     break
                 case 3:
                     print("You have chosen to logout.")

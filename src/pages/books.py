@@ -1,6 +1,7 @@
 from src.utils.logo import logo
 from src.utils.color import color
 from src.models.book import Book
+from src.models.session import session
 
 
 def main(subject):
@@ -39,6 +40,14 @@ def main(subject):
                     print("You are already on the first page!")
             elif choice.upper() == "EXIT":
                 return
+            elif choice in [book['isbn'] for book in books]:
+                print(f"Book with ISBN {choice} added to cart!")
+                session.cart.append({
+                    "isbn": choice,
+                    "title": next(book['title'] for book in books if book['isbn'] == choice),
+                    "price": next(book['price'] for book in books if book['isbn'] == choice),
+                    "quantity": 1
+                })
             else:
                 print(
                     "Invalid option has been chosen! Please try again...",

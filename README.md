@@ -12,10 +12,10 @@ The project is subjected to Databases and Data modelling. The assigment is to cr
 - Export Recipt
 
 ## Repository Details
-Author: Xeinostorm
-Created: 2026-03-08
-Published: UNKNOWN
-Last Updated: 2026-03-08
+- Author: Xeinostorm
+- Created: 2026-03-08
+- Published: UNKNOWN
+- Last Updated: 2026-03-08
 
 ## Requirements
 Before running the application you need to install the required dependencies:
