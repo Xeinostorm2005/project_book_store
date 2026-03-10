@@ -1,16 +1,15 @@
 from src.utils.logo import logo
 from src.utils.color import color
 from src.models.session import session
-from src.models.cart import cart
-from src.pages.checkout import main as checkout_main
-from src.models.checkout import Checkout
 
 
-def main():
-    cart_items = cart.view_cart(session.user['userid'])
+def main(order, cart_items):
+    order_id = order.process_checkout()
     logo()
-    print(color(" 🛒 DIN KASSA (YOUR CART) ".center(80, "—"), "250;200;0"))
+    print(color(" RECEIPT ".center(80, "—"), "250;200;0"))
     print(f"Logged in as: {session.user['fname']} {session.user['lname']}\n")
+    print(f"Order ID: {order_id}")
+    print(f"Address: {session.user['address']}, {session.user['city']} {session.user['zip']}\n")
 
     header = f"{'ISBN':<15} | {'Title':<30} | {'Price':<12} | {'Qty':<8} | {'Total':<15}"
 
@@ -36,27 +35,4 @@ def main():
 
     print(color(f"Total: ${total_price:,.2f}", "250;200;0"), end="\n\n")
 
-    print("What would you like to do?")
-    options = (
-        "1. Proceed to checkout\n"
-        "2. Return to main menu"
-    )
-    print(color(options, "44;44;44"), end="\n\n")
-
-    while True:
-        choice = input(color("~> ", "255;140;0"))
-
-        match int(choice):
-            case 1:
-                print("You have chosen to proceed to checkout.")
-                order = Checkout(session.user, cart_items)
-                checkout_main(order, cart_items)
-                break
-            case 2:
-                print("You have chosen to return to the main menu.")
-                return
-            case _:
-                print(
-                    "Invalid option has been chosen! Please try again...",
-                    end="\n\n"
-                )
+    input(color("Press Enter to return to the main menu...", "255;140;0"))

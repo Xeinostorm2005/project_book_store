@@ -17,5 +17,9 @@ class Cart:
         """
         return self.db.fetch_all(query, (user_id,), fetch_mode="dict")
 
+    def clear_cart(self, user_id):
+        query = "DELETE FROM cart WHERE userid = %s"
+        self.db.execute_query(query, (user_id,))
+
 
 cart = Cart()
